@@ -24,7 +24,7 @@
                         Some media players will default to an alphanumeribetical ordering of files, which seems reasonable. The problem is that when files/folders are prefixed with a number (as they often are in eLearning videos), then files numbered, for example, from 1 - 12, will default to a playback order of 1, 10, 11, 12, 2, 3, 4 etc.
                     <LineBreak/>
                         <LineBreak/>
-                        This is less than ideal. The "Force File Order" option overcomes this by prefixing all single digit prefixed filenames/folders with an A, all double digit prefixed filenames/folders with B, etc. So, in the above example, the files would be renamed A 1, A 2, A 3 .... A 9, B 10, B 11 etc. This forces the playback order to be correct. If the "Force File Order" is unchecked, numerically preficxed file/folder names will remain unchanged.
+                        This is less than ideal. The "Force File Order" option overcomes this by prefixing all single digit prefixed filenames/folders with an A, all double digit prefixed filenames/folders with B, etc. So, in the above example, the files would be renamed A 1, A 2, A 3 .... A 9, B 10, B 11 etc. This forces the playback order to be correct. If the "Force File Order" is unchecked, numerically prefixed file/folder names will remain unchanged.
                     </Paragraph>
 
                 </FlowDocument>
