@@ -1,0 +1,108 @@
+﻿<Window x:Class="BatchAudioStreamEncoder.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Batch Audio Stream Encoder" Height="270" Width="620" Icon="BASE.ico">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition Width="5*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Menu Grid.ColumnSpan="4" IsMainMenu="True">
+
+            <MenuItem Header="_File">
+                <MenuItem x:Name="fileMenuExit" Header="_Exit" Click="FileMenuExit_OnClick"/>
+            </MenuItem>
+
+            <MenuItem Header="_Help">
+                <MenuItem x:Name="helpMenuHelp" Header="_Help" Click="HelpMenuHelp_OnClick"/>
+                <MenuItem x:Name="helpMenuAbout" Header="_About" Click="HelpMenuAbout_OnClick"/>
+            </MenuItem>
+
+        </Menu>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+
+
+
+            <Button x:Name="btnAddFolder" Height="25" Click="btnAddFolder_Click" >Add Source Folder</Button>
+            <Button x:Name="btnRemoveFolder" Grid.Column="1" Height="25" Click="btnRemoveFolder_Click">Remove Source Folder</Button>
+        </Grid>
+
+        <Grid Grid.Column="1" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="btnSelectOutputFolder" Height="25" Click="btnSelectOutputFolder_Click">Set Output Folder</Button>
+            <Button x:Name="btnStartEncoding" Grid.Column="1" Height="25" Click="btnStartEncoding_Click">Start Encoding</Button>
+        </Grid>
+
+        <GroupBox Grid.Row="2" Grid.RowSpan="3" Margin="5 10 5 5" Header="Source Folder List">
+            <ListBox Grid.Row="2" Grid.RowSpan="3" x:Name="FolderListBox" ItemsSource="{Binding SourceFolderList}"/>
+        </GroupBox>
+
+        <GroupBox Grid.Row="2" Grid.Column="1" Header="Encoder Settings" Margin="10 10 10 5">
+        <Grid Margin="0 5 0 0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Row="0" ToolTip="Filter mask is a pipe separated list, e.g. *.avi|*.flv|*.mp4">Source File Filter:</Label>
+            <TextBox Grid.Row="0" Text="{Binding SupportedFileTypes}" Grid.Column="1"/>
+
+            <Label Grid.Row="1">Target Bitrate:</Label>
+            <ComboBox Grid.Row="1" Grid.Column="1" ItemsSource="{Binding AvailableBitRates}" ItemStringFormat="{}{0} kbps" SelectedItem="{Binding SelectedBitRate}"/>
+
+
+            <Label Grid.Row="2">VLC Executable:</Label>
+
+            <Grid Grid.Row="2" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBox IsReadOnly="True" Text="{Binding VLCExecutable}" Grid.Column="0"/>
+                <Button x:Name="btnSelectVLCExecutable" Click="BtnSelectVLCExecutable_OnClick" Grid.Column="1" Width="25" Margin="0,0,5,0" HorizontalAlignment="Right" Height="27" VerticalAlignment="Top">...</Button>
+            
+            
+            </Grid>
+            <Label Grid.Row="3" Content="Force File Order" ToolTip="See Help for a description of this option"/>
+
+                <CheckBox IsChecked="{Binding IsPrefixingEnabled}" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="3" Grid.Column="1"/>
+        </Grid>
+        </GroupBox>
+        
+        
+        <ScrollViewer Padding="0 0 0 5" Grid.Column="1" Grid.Row="3" VerticalScrollBarVisibility="Disabled" HorizontalScrollBarVisibility="Auto">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Padding="10 0 5 0">Output Folder:</TextBlock>
+                <TextBlock Text="{Binding OutputFolder}" Height="20" Margin="0 0 10 0" VerticalAlignment="Bottom"/>
+            </StackPanel>
+        </ScrollViewer>
+
+    </Grid>
+</Window>

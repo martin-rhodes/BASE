@@ -1,0 +1,36 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="BatchAudioStreamEncoder.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="DefaultBitrate" Type="System.String" Scope="User">
+      <Value Profile="(Default)">96</Value>
+    </Setting>
+    <Setting Name="DefaultFileMask" Type="System.String" Scope="User">
+      <Value Profile="(Default)">*.flv|*.wmv|*.avi|*.mp4|*.mov</Value>
+    </Setting>
+    <Setting Name="SupportedBitrates" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;64&lt;/string&gt;
+  &lt;string&gt;96&lt;/string&gt;
+  &lt;string&gt;128&lt;/string&gt;
+  &lt;string&gt;192&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
+    </Setting>
+    <Setting Name="DefaultVLCLocation64" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Program Files\VideoLAN\VLC\vlc.exe</Value>
+    </Setting>
+    <Setting Name="VLCExecutable" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Please set VLC.exe location</Value>
+    </Setting>
+    <Setting Name="DefaultVLCLocation32" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Program Files (x86)\VideoLAN\VLC\vlc.exe</Value>
+    </Setting>
+    <Setting Name="IsPrefixingEnabled" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="OutputFolder" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Not Set</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

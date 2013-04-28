@@ -1,0 +1,25 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:BatchAudioStreamEncoder" x:Class="BatchAudioStreamEncoder.ProgressWindow"
+        Title="Encoder Progress" Width="400" Height="200" Icon="BASE.ico">
+    <Window.Resources>
+        <local:TaskBarItemInfoProgressConverter x:Key="TaskBarItemInfoProgressConverter"/>
+    </Window.Resources>
+    <Window.TaskbarItemInfo>
+        <TaskbarItemInfo x:Name="taskBarItemInfo" ProgressValue="{Binding CurrentProgressPercentage, Converter={StaticResource TaskBarItemInfoProgressConverter}}"/>
+    </Window.TaskbarItemInfo>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="2" TextWrapping="Wrap" Text="{Binding CurrentSourceFile, StringFormat=Processing \{0\}}" Margin="10 5 10 5"/>
+        <TextBlock Margin="5 5 5 5" HorizontalAlignment="Center" Text="{Binding CurrentProgressText}"/>
+        <ProgressBar Value="{Binding CurrentProgressPercentage}" Height="25" Grid.Row="1"/>
+        <Button Grid.Row="3" Click="Button_Click_Abort" Content="Abort"/>
+    </Grid>
+</Window>

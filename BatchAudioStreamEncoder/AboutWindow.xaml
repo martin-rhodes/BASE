@@ -1,0 +1,41 @@
+﻿<Window x:Class="BatchAudioStreamEncoder.AboutWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="About" Height="430" Width="400" Icon="BASE.ico" ShowInTaskbar="False">
+    <Grid>
+        <RichTextBox IsReadOnly="True">
+            <RichTextBox.Document>
+                <FlowDocument 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+>
+                    <Paragraph TextAlignment="Center" FontSize="18">Batch Audio Stream Encoder (BASE)</Paragraph>
+                    <BlockUIContainer>
+                        <Button>
+                            <Image Source="BASE.ico" Height="50" Width="50" />
+                        </Button>
+                    </BlockUIContainer>
+
+                    <Paragraph TextAlignment="Center">
+                        BASE allows you to batch encode a large variety of video file formats into their audio equivalent using the power of VLC. 
+                        Its main strength lies in its ability to scan folders for target video file types, and then recreate the folder structure of the discovered source material using a custom output folder and bitrate.
+                        
+                        <LineBreak/>
+                        <LineBreak/>
+                        
+                        This is particularly useful when encoding structured material (such as eLearning courses), as the original folder structure remains intact, allowing you to listen to the course material
+                        in the same order as it is presented within the videos.
+                    </Paragraph>
+                    
+                    <Paragraph TextAlignment="Center">
+                        <LineBreak/>
+                        <LineBreak/>
+                        BASE is a Martin Rhodes production (martin.rhodes@gmail.com)
+                        <LineBreak/>
+                      The speaker icon is provided courtesy of http://iconleak.com
+                    </Paragraph>                   
+                </FlowDocument>
+            </RichTextBox.Document>
+        </RichTextBox>
+    </Grid>
+</Window>
