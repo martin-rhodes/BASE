@@ -11,3 +11,6 @@ folder structure of the discovered source material using a custom output folder 
 This is particularly useful when encoding structured material (such as eLearning courses), as the original folder 
 structure remains intact, allowing you to listen to the course material in the same order as it is presented within 
 the videos.
+
+BASE is a C#.NET project built in Visual Studio 2012 and can be compiled and run on all platofrms that support 
+C#.NET.
